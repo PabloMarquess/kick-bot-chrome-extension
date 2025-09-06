@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Kick Bot",
+  "version": "1.0.1",
+  "description": "Envia emojis a cada 4:55min e !loja a cada 9:55min no chat da Kick.",
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://kick.com/*", "https://*.kick.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
